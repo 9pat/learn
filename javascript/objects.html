@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Javascript</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="header">
+	<h1>Learning JavaScript</h1>
+	<p>With Brad Traversy</p>
+</div>
+
+<div class="container">
+
+
+</div>
+
+<script>
+// Object liternal - how to encapsulate everything inside their own object. 
+
+var person = {
+	firstName: 'Brad',
+	lastName: 'Traversy',
+	age: 34,
+	children: ['Brianna', 'Nicholas'],
+	address: {
+		street: '555 nowhere st.',
+		city: 'Boston',
+		state: 'MA'
+	},
+	fullName: function(){
+		return this.firstName + "  " + this.lastName;
+	}
+}
+
+console.log(person.firstName);
+console.log(person.age);
+console.log(person.children[0]);
+
+console.log(person);
+console.log(person.fullName());
+
+// Object Constructor 
+
+var apple = new Object();
+apple.color = 'red';
+apple.shape = 'round';
+
+apple.describe = function(){
+	return 'An apple is the color ' + this.color + ' and its shape is '+ this.shape;
+}
+
+console.log(apple.describe());
+
+// Constructor Pattern
+
+function Fruit(name, color, shape){
+	this.name = name;
+	this.color = color;
+	this.shape = shape;
+	
+	this.describe = function(){
+		return 'A ' + this.name + ' is the color ' + this.color + 'and is the shape ' + this.shape;
+	}
+};
+
+var apple = new Fruit('apple', 'red', 'round');
+var melon = new Fruit('melon', 'green' ,'round');
+
+console.log(melon.describe());
+
+// Array of Object
+
+var users = [
+	{
+		name: 'john doe',
+		age: 30,
+	},
+	{
+		name: 'makr smith',
+		age: 42,
+	},
+	{
+		name: 'Shelly Will',
+		age: 20,
+	},
+	{
+		name: 'EGI LII',
+		age: 39,
+	},
+];
+
+console.log(users[2]);
+
+</script>
+	
+</body>
+</html>
+
+
+

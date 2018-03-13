@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Javascript</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body onload="showDate()">
+
+<div class="header">
+	<h1 id="heading">Learning JavaScript</h1>
+	<p>With Brad Traversy</p>
+</div>
+
+<div class="container">
+	
+	<!-- button onclick="doClick()">Click me</button -->
+	<button onclick="changeText()">Click me</button> 
+	<button onmouseout="clearDate()" onmouseover="showDate()">Show date</button>
+	<!--
+	onclick
+	onmouseover
+	onmouseout
+	onload
+	-->
+	<h1 id="time"></h1>
+
+</div>
+
+<script>
+
+function doClick(){
+	alert('you clicked!');
+}
+
+/*
+function changeText(id){
+	id.innerHTML = 'Your Clicked!!';
+}
+*/
+
+function changeText(){
+	var heading = document.getElementById('heading');
+	heading.innerHTML = 'You Clicked';
+}
+
+function showDate(){
+	var time = document.getElementById('time');
+	time.innerHTML = Date();
+}
+
+function clearDate(){
+	var time = document.getElementById('time');
+	time.innerHTML = '';
+}
+
+//console.log();
+</script>
+	
+</body>
+</html>
+
+
+
