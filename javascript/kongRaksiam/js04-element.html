@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS :  element, id and prompt box</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<p id="p1">patty</p>
+		<button onclick="changeMsg()">เปลี่ยนข้อความ</button> 
+		 
+		<p> = = = = = = = = = = = = = = = = = </p>
+		<form id="form1">
+		<input type="text" id="txt1" value=""></input>
+		<button onclick="alertMsg()">AlertBox </button>
+		</form>
+		<p> = = = = = = = = = = = = = = = = = </p>
+		<button onclick="runPrompt()">ทดสอบ prompt Box</button> 
+	</body>
+	<script>
+	
+	function changeMsg(){
+		// อ้างอิง value ด้วย element id แล้วใช้คำสั่ง innerHTML ในการเปลี่ยนแปลง value 
+		document.getElementById("p1").innerHTML="programming";
+		document.getElementById("p1").style.color="red";
+	}
+	
+	function alertMsg(){
+		var str=document.getElementById("txt1").value;
+		alert(str);
+	}
+	
+	function runPrompt(){
+		var name = prompt("กรุณาใส่ชื่อของคุณ", "ค่าเริ่มต้น");
+		if(name===''){
+			alert("กรุณาใส่ชื่อของคุณ");
+		}else{
+		alert(name);
+		document.getElementById("p1").innerHTML = name;		// ถ้าจะส่งค่าไปแทนที่ value ใน <p id="p1"> </p>
+		}
+	}
+	
+	
+		
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

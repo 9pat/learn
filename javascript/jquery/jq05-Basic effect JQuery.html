@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : Basic effect JQuery</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+		#div1{width:200px; height:100px;background-color:pink; border: 2px solid lightgrey;}
+		#div2{width:220px; height:140px;background-color:green; border: 2px solid pink;}
+		</style>
+	</head>
+	
+	<body>
+		<div id="div1">
+		
+		</div>
+		<br>
+		<input id="btn1" type="button" value="show" />
+		<button id="btn2" >hide</button>
+		<input id="btn3"  type="button" value="toggle" />
+		<button id="btn4" >fadeTo</button>
+		<hr>
+		<div id="div2">
+		
+		</div>
+		<br>
+		<input id="btn5" type="button" value="slideDown" />
+		<button id="btn6" >slideUp</button>
+		<input id="btn7"  type="button" value="slideToggle" />
+
+		
+			
+	</body>
+	<script>
+	$(function(){
+		$("#btn1").click(function(){
+			$("#div1").fadeIn(3000);
+		});
+		$("#btn2").click(function(){
+			$("#div1").fadeOut(3000);
+		});
+		$("#btn3").click(function(){
+			$("#div1").fadeToggle(2000);;
+		});
+		$("#btn4").click(function(){
+			$("#div1").fadeTo(2000,0.3);	// fadeTo(delay, opacity); 
+		});
+		/*
+		$("#div1").hover(function(){
+			$(this).css("opacity",0.3);
+		});
+		*/
+		$("#btn5").click(function(){
+			$("#div2").slideDown(2000);	// slideDown(delay);
+		});
+		$("#btn6").click(function(){
+			$("#div2").slideUp(2000);	// slideDown(delay);
+		});
+		$("#btn7").click(function(){
+			$("#div2").slideToggle("slow");	// slideDown(delay);
+		});
+	});
+	</script>
+</html>
+

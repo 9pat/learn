@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : function</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<p id="p1">&nbsp;</p>
+		<button onclick="sum()">sum1</button> 
+		<button onclick="sum2(10,100)">sum2</button> 
+		<button onclick="showSum()">return ค่า</button>
+		<button onclick="sumInfinite(23,523,112,423,112,53,63)">รับค่าแบบ infinite</button>
+
+	</body>
+	<script>
+		function sum(){
+			var num1=10;
+			var num2=50;
+			alert("ผลรวม = " + (num1+num2));
+		}
+		
+		// มีการรับค่า
+		function sum2(x,y){
+			alert("ผลรวม = " + (x+y));
+		}
+		
+		// มีการรับค่า และคืนค่า
+		function sum3(x,y,z){
+			var sum=(x+y+z);
+			return sum;	// ทำงาน function เสร็จให้เก็บค่าเอาไว้ 
+		}
+		
+		function showSum(){
+			var sumAll=sum3(10, 30, 60);	// ได้ค่า return sum; ที่ส่งมาจากฟังก์ชั่น sum3() เอามาเก็บไว้ในตัวแปร sumAll 
+			document.getElementById("p1").innerHTML = sumAll;
+		}
+		
+		// การรับค่าแบบ infinite คือรับค่ามาในจำนวนกี่ตัวก็ได้ เข้ามาทำงานในฟังก์ชั่น 
+		function sumInfinite(){
+			var sumAll=0;
+			for(var i=0 ; i <arguments.length ; i++){
+				sumAll+=arguments[i];
+			}
+			document.getElementById("p1").innerHTML = sumAll;
+		}
+		
+	
+		
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

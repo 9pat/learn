@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : style change</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+
+	<p id="p1">paragraph</p>
+	<p id="p2">PHP</p>
+	<p id="p3">JAVA</p>
+	<p id="p4">HTML</p>
+	<button>Click</button>
+	
+	</body>
+	<script>
+	
+	$(function(){
+		// ใช้ event click มาครอบ 
+		$("#p1").click(function(){
+			// ใช้ method .css() ในการเปลี่ยน style 
+			$("p").css("background","lightgreen")
+			.css("color","darkgrey")
+			.css("font-size","20px");
+		});
+	});
+	
+	// ใช้ element นึงไปควบคุม element อีกตัว
+	$(function(){
+		$("button").click(function(){
+			$("#p1").css("background","lightgrey");
+			$("#p2").css("background","pink");
+			$("#p3").css("background","lightblue");
+			$("#p4").css("background","lightyellow");
+			$(this).css("font-size","20px");
+		});
+	});
+	</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : Event</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body onload="myAlert()">	<!-- JS event onload  -->
+		
+		<h3 onclick="this.innerHTML='แนะกดแล้วซินะ'">onclick ใน element (ลองกดดู)</h3>
+		
+		<h3 onclick="this.style.color='green'">กดเปลี่ยนสี</h3>
+		
+		<button onclick="openwin()">Event onclick</button> 
+		<button onclick="resizewin()">เปลี่ยนขนาด</button>
+	
+		<div style="width:200px; height:100px; border: 1px solid yellow;" onclick="change(this)" ondblclick="red(this)"></div>
+		
+		<textarea id="txt1" rows="4" cols="50">
+			patty <br>			path<br>			cass<br>			html <br>			patty <br>			path<br>			cass<br>			html <br>
+		</textarea>
+		<button onclick="selectAll()">select all</button>
+		
+		<div style="width:200px; height:100px; border: 1px solid yellow;" onMouseOver="changeStyle(this)" onMouseOut="alert('ออกไปแล้วแล้วเหรอ')"></div>
+		
+		<p> ใส่ข้อความ : <input type="text" onkeydown="red(this)" onkeyup="alert('done?')"></input></p>
+		
+		<div style="width:100px; height:100px; border: 1px solid yellow;" onMouseUp="changeStyle(this)" onMouseDown="changeStyle2(this)" onMouseMove="red(this)"></div>
+		
+		<h3>ทดสอบ onfocus และ onblur</h3>
+		<p> ป้อนข้อมูล : <input type="text" onfocus="testonfocus(this)" onblur="testonblur(this)" value="default"></input></p>
+		
+		<p id="demo">ตัวเลือก</p>
+		
+		<select id="myselect" onchange="selectChange()">
+			<option value="">ตัวเลือก</option>
+			<option value="html">html</option>
+			<option value="css">css</option>
+			<option value="javascript">javascript</option>
+			<option value="node">node</option>
+			<option value="linux">linux</option>
+		</select>
+		
+	</body>
+	<script>
+	/* ----- EVENT onclick() ----- */ 
+	
+	var myWindow;		
+	// สร้าง object myWindow ขึ้นมา
+	function openwin(){
+		myWindow=window.open("","","width=100px,height=100px");		
+		// เปิดหน้าต่างใหม่ เป็น object ที่ชื่อ myWindow
+		// mywindow=window.open("URLs","Target Type","width=100px,height=100px");
+	}
+	function myAlert(){
+		// alert("Welcome to Pat.me");
+	}
+	function resizewin(){
+		myWindow.resizeTo("350","250");
+		myWindow.focus();
+	}
+	
+	/* ----- EVENT ondbklClick()  ||  on double click !! ----- */ 
+	function change(obj){		// อ้างอิง this คือการส่ง div ทั้งกล่องมาเป็น object หนึ่ง
+		obj.style.backgroundColor="green";
+	}
+	function red(obj){
+		obj.style.backgroundColor="red";
+	}
+	
+	/* ----- select all in textarea ----- */
+	function selectAll(){
+		var txt=document.getElementById("txt1");
+		txt.select();
+		txt.style.color="green";
+		// txt.style.fontSize="";
+		//txt.style.backgroundColor="";
+	}
+	
+	/* ----- onMouseOver , onMouseOut ----- */
+	function changeStyle(obj){
+		obj.style.background='green';
+	}
+	
+	/* ----- onMouseUp , onMouseOutDown ----- */
+	function changeStyle2(obj){
+		obj.style.background='grey';
+	}
+	
+	/* ----- onfocus, onblur ----- */
+	function testonfocus(obj){
+		obj.style.background="pink";		
+		obj.value="";
+	}
+	function testonblur(obj){
+		obj.style.background="lightgrey";
+	}
+	
+	/* ----- onChange ----- */
+	function selectChange(){
+		var x=document.getElementById("myselect").value;
+		document.getElementById("demo").innerHTML=x; 
+		
+	}
+		
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

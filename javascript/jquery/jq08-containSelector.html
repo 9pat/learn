@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : containSelector </title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+			ul {list-style:none; padding:0; margin:0;}
+			.highlight {background-color: yellow;} 
+		</style>
+	</head>
+	
+	<body>
+	<h4> ค้นหาข้อมูล </h4>
+	<p><input type="text" id="txtsearch"></input></p>
+	<ul id="name">
+		<li>CSS</li>
+		<li>JS</li>
+		<li>Vue</li>
+		<li>React</li>
+		<li>Angular</li>
+		<li>Book</li>
+		<li>Bioscope</li>
+		<li>Calculus</li>
+		<li>Diagram</li>
+		<li>Java</li>
+		<li>Script</li>
+		<li>laravel</li>
+		<li>code igniter</li>
+	</ul>
+
+	</body>
+	<script>
+	
+	$(function(){
+		$("#txtsearch").keyup(function(){					// ทุกครั้งที่ keyup (ปล่อยนิ้วจาก keyboard)
+			var searchName = $(this).val();				// เก็บค่าที่ใส่ในช่องมาไว้ในตัวแปร searchName
+			$("#name li").removeClass("highlight");	// ให้เอา style .highlight ออก --- ล้าง style นั่นเอง
+			if(searchName !== ''){							// ถ้าช่อง searchName ไม่ใช่ค่าว่าง
+				$("#name li:contains('"+searchName+"')").addClass("highlight");		// สมาชิกใน #name ที่มีค่า searchName ในนั้น ให้แต่ง style .highlight 
+			}
+		});
+	});
+
+	</script>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : show() hide() click() change() keyboard()</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+			.style1{font-size:20px; color:purple;}
+			.style2{font-size:22px; color:green;font-style:italic;}
+			.php{box-shadow: 2px 2px lightgrey; width: 100px; height 55px;border: 2px dotted black;}
+		</style>
+	</head>
+	
+	<body>
+	<h2>show() hide() click() change() keyboard()</h2>
+
+	<p id="p1">paragraph</p>
+	<div><br><br><br></div>
+	
+	<select id="list">
+		<option value="">ตัวเลือก</option>
+		<option value="one">one</option>
+		<option value="two">two</option>
+		<option value="three">three</option>
+		<option value="four">four</option>
+	</select>
+	<span id="showList"></span>
+	<hr>
+	ชื่อ : <input type="text" placeholder="ป้อนชื่อ"></input> นามสกุล : <input type="text" placeholder="นามสกุล"></input>
+	<hr>
+	<button id="show">show</button>
+	<button id="hide">hide</button>
+	<button id="button">button</button>
+
+	
+	</body>
+	<script>
+	$(function(){
+		$("#show").click(function(){
+			showElement();
+			$("#hide").show(3000);	// หน่วงเวลา
+		});
+		$("#hide").click(function(){
+			hideElement()
+			$("#hide").hide();
+		});
+		
+		function showElement(){
+			$("p").show();
+		}
+		function hideElement(){
+			$("p").hide();
+		}
+		
+		/* event click dblclick */
+		$("#button").click(function(){
+			$("p").hide(3000);
+		});
+		$("#button").dblclick(function(){
+			$("p").show(3000);
+		});
+		
+		/* event change */
+		$("#list").change(function(){
+			var listval = $("#list").val();
+			$("#showList").html(listval);
+		});
+		
+		/* event keyboard */
+		$("input").keydown(function(){
+			$("input").css("background-color","pink");
+		});
+		$("input").keyup(function(){
+			$("input").css("background-color","lightgrey");
+		});
+		$("input").focus(function(){
+			$("input").css("background-color","lightgreen");
+		});
+	});
+	</script>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : hover , focus</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+			ul {list-style:none; padding:0; margin:0;}
+			.highlight {background-color: yellow;} 
+		</style>
+	</head>
+	
+	<body>
+		<a id="menu-java" href="">Java</a> | 
+		<a id="menu-node" href="">node</a> | 
+		<a id="menu-mongo" href="">MongoDa</a> | 
+		<a id="menu-css" href="">CSS</a> | 
+		<a id="menu-html" href="">HTML</a> 
+		<div id="div1">
+				
+		</div>
+		<hr>
+		ป้อนชื่อ : <input type="text" id="txt-name" /><span id="sp1"></span> <br />
+		อายุ : <input type="text" id="txt-age" /><span id="sp2"></span>
+		
+		
+	</body>
+	<script>
+
+	$(function(){
+	// focusin , focusout
+		$("#txt-name").focusin(function(){
+			$(this).css("background-color","pink");
+			$("#sp1").text(" ป้อนชื่อเต็มของคุณ");
+		});
+		$("#txt-name").focusout(function(){
+			$(this).css("background-color","lightgrey");
+			$("#sp1").text("");
+		});
+		$("#txt-age").focusin(function(){
+			$(this).css("background-color","pink");
+			$("#sp2").text(" ป้อนอายุ");
+		});
+		$("#txt-age").focusout(function(){
+			$(this).css("background-color","lightgrey");
+			$("#sp2").text("");
+		});
+	
+	// hover 
+		$("#menu-java").hover(function(){
+			$("#div1").html("<h3>JAVA </h3>Content");
+		});
+		$("#menu-node").hover(function(){
+			$("#div1").html("<h3>Node </h3>vue, angular, react");
+			$("#div1").removeAttr('style');		// clear all CSS Style 
+		});
+		$("#menu-mongo").hover(function(){
+			$("#div1").html("<h3>MongoDB </h3> is a no SQL database");
+			$("#div1").removeAttr('style');
+			$("#div1").css("font-weight","900");
+		});
+		$("#menu-css").hover(function(){
+			$("#div1").html("<h3>CSS </h3> make anything prettier");
+			$("#div1").removeAttr('style');
+			$("#div1").css("color","green");
+		});
+		$("#menu-html").hover(function(){
+			$("#div1").html("<h3>HTML </h3> Root of all web content");
+		});
+	});
+	
+	</script>
+</html>
+

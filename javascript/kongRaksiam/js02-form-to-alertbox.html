@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS :  form to alert</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<form name="form1">
+			ชื่อ : <input type="text" name="txt1" value=""></input><br>
+			สกุล : <input type="text" name="txt2" value=""></input><br>
+			<button onclick="alert(fullName())">คลิ๊กที่นี่ </button>
+		</form>
+		
+		<p> = = = = = = = = = = = = = = = = = </p>
+	</body>
+	<script>
+		
+	// ส่งค่าจาก form ไป alert box 
+	
+	function fullName(){
+		// การใช้ DOM อ้างอิง value จาก form 
+		var fname=document.form1.txt1.value;
+		var lname=document.form1.txt2.value;
+		alert('เธอชื่อ ' + fname + ' ' + lname + ' ใช่ไหม');
+	}
+
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : loop</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<button onclick="summation()">while..loop</button> 
+		<button onclick="doSum()">do..while</button>
+		<p id="demo">ผลลัพธ์</p> 
+	</body>
+	<script>
+	for(var i=1 ; i<=10 ; i++){
+		document.write(i + "<br>");
+	}
+	
+	// ใส่เงื่อนไขเพิ่มเติมให้สลับ style 
+	document.write("<hr>");
+
+	for(var i=1 ; i<=10 ; i++){
+		if(i%2==0){
+			document.write(i + "<br>");
+		} else {
+			document.write("<u>" + i + "</u><br>");
+		}
+		
+	}
+	
+	// While...loop
+	
+	function summation(){
+		var sum=0;
+		while(sco!=0){
+			var sco=prompt("ป้อนตัวเลข 0 คือเลิกทำ");
+			if(sco<=0){
+				break;
+			}
+			sum+=parseInt(sco);	// แปลงค่า sco ให้เป็นค่าตัวเลข (เอาชัวร์)
+			document.getElementById("demo").innerHTML = "ผลรวมเท่ากับ "+sum;
+		}
+	}
+	
+	// do...while ทำซ้ำ 1 รอบก่อน แล้วค่อยตรวจเช็คเงื่อนไข
+	
+		function doSum(){
+		var sum=0;
+		do{
+			sco=prompt("ป้อนตัวเลข");
+			sum+=parseInt(sco);
+			document.getElementById("demo").innerHTML = "ผลรวมเท่ากับ "+sum;
+		}
+		while(sco>0);
+	}
+	
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

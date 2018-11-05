@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : function</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<h1>hello, js</h1>
+		<p> hellp </p>
+	</body>
+	
+<script>
+
+function showData() {
+	document.write('JavaScript <br>');
+}
+showData();
+
+function addNumber(num1, num2) {	// มี num1 num2 เป็น parameter
+	var result = num1 + num2;
+	document.write('result : ' + result + '<br>');
+}
+
+addNumber(10, 5);	// argument เรียกว่า ส่ง argument เข้าไป
+addNumber(2, 5);
+
+// function แบบ return ค่าได้ 
+function getMessage(msg){
+	return 'ข้อความของคุณคือ ' + msg + '<br>'; 
+}
+
+document.write(getMessage('Javascript'));
+
+var msg = getMessage('SQL');
+document.write(msg);
+
+// function แบบ expression
+
+var showName = function(){
+	document.write('patt <br>');
+}
+
+showName();
+
+// =========================================
+
+var msg = 'hello';		// ตัวแปรด้านนอก function เรียกว่า Global Variable 
+
+function showMsg() {
+	var msg = 'good bye';	// ตัวแปรด้านใน function ถ้าไม่ใส่ var ไว้ข้างหน้าจะถือว่าเป็น Global Variable ทันที 
+	document.write(msg);
+}
+showMsg();
+
+</script>
+<script type="text/javascript" src=""></script>
+</html>

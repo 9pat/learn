@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : Objects</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<h1>hello, js</h1>
+		<p> hellp </p>
+	</body>
+	
+<script>
+/*
+Objects ตัววัตถุ เช่น นักเรียน
+properties คุณสมบัติของวัตถุนั้นๆ ex: ชื่อ นามสกุล อายุ เลขประจำตัว 
+methods วิธีการทำงาน หรือ พฤติกรรม ของวัตถุนั้นๆ อยู่ที่เราสร้าง function() ขึ้นมาทำอะไร ex: ออกค่ายกิจกรรม ส่งการบ้าน 
+*/
+
+// สร้าง object ด้วย var 
+var programmer = {
+	fullname : 'patt', 
+	age : 29,
+	skills : ['html', 'css', 'linux'],
+	showData : function(){
+		return 'my name is ' + this.fullname ;
+	}
+}
+
+// console.log(programmer.fullname);
+// console.log(programmer.skills[2]);
+
+programmer.skills.push('php');
+// console.log(programmer.skills);
+
+// console.log(programmer.showData());		// เรียกใช้ method ใน objects 
+
+/* ============================================ */
+
+for (var prop in programmer) {		// แสดง properties ของ object programmer
+	console.log(prop);
+}
+
+for (var prop in programmer) {		// แสดง value ของ แต่ละ properties ภายใน object programmer
+	console.log(programmer[prop]);
+}
+
+/* === ใช้งาน Array กับ Objects ========================== */
+// JSON - JavaScript Objects Notation 
+
+var product = [
+	{
+		productName : 'Coke',
+		productPrice : 33
+	},
+	{
+		productName : 'GreenTea',
+		productPrice : 40
+	}
+]
+
+console.log(product[0].productName);
+
+for (var i = 0 ; i < product.length ; i++) {
+	console.log(product[i].productName);
+	console.log(product[i].productPrice);
+}
+
+
+</script>
+<script type="text/javascript" src=""></script>
+</html>

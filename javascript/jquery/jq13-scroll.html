@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : scroll | mouseevent </title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+
+		</style>
+	</head>
+	
+	<body>
+	<textarea id="txt1" rows="7" cols"50">
+	วันนี้จะพาทุกคนมาดูว่าเก็บเวลที่ไหนดีเก็บเวลที่ไหนจะไวหรือต้องตีตัวอะไรบ้างจ้าซึ่งในคลิปนี้เราได้คำนวณค่า Exp ที่ได้มาในระดับนึงแล้วจ้าว่าคุ้มแน่นอนและเวลไวแน่นอนจ้า
+ลิ้งกลุ่มFacebook:Ragnarok M Eternal Love
+sq-al.facebook.com/groups/RagnarokMobileOfficialThailand/
+
+Ragnarok M Eternal Love เก็บเวล1-99Ragnarok M Eternal Love เวลที่ไหนดีRagnarok M เก็บเวลที่ไหนดี1-99Ragnarok M เก็บเวลRagnarok M Eternal Love ทำไงเวลไวRagnarok M ทำไงเวลไวRagnarok M Eternal Love สถานที่เก็บเวลRagnarok M สถานที่เก็บเวลRagnarok M Eternal Love วิธีเก็บเวลRagnarok M วิธีเก็บเวลRabbitcreamRBCRO MRO M ไทยRagnarok M Eternal Love ThRo M TH
+	</textarea>
+	<div id="div1"></div>
+	<hr>
+	<div id="div2" style="border:3px solid red; width: 300px; height: 300px;"
+	</body>
+	
+	<script>
+	$(function(){
+		$("#txt1").scroll(function(){
+			var position=$("#txt1").scrollTop();
+			$("#div1").html("มีการเลื่อน scroll bar ที่ตำแหน่ง " + position);
+		});
+		//
+		// mouse event 
+		$("#div2").mouseenter(function(){
+			$(this).css("background-color","lightgreen");
+		});
+		$("#div2").mouseleave(function(){
+			$(this).css("background-color","pink");
+		});
+		$("#div2").mousemove(function(){
+			$(this).css("background-color","lightgrey");
+		}).mouseout(function(){
+			$(this).css("background-color","yellow");
+		});
+	});	
+	</script>
+</html>
+

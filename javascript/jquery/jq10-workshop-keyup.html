@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : workshop keyup</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+
+		</style>
+	</head>
+	
+	<body>
+	<h3>charactor count down</h3>
+	<textarea id="txt1" rows="7" cols="25" maxlength="140"></textarea>
+	<div id="div1">
+	</div>
+	</body>
+	<script>
+	$(function(){	
+		var textmax=$("#txt1").attr("maxlength");
+		$("#div1").html("จำนวนตัวอักษรที่พิมพ์ได้ : <strong>" + textmax + "</strong>"); 
+		//
+		$("#txt1").keyup(function(){		// เวลาพิมพ์ให้เรียกใช้งาน showText()
+			showText();
+		});
+		function showText(){
+			var textmax=$("#txt1").attr("maxlength");	// เก็บค่า maxlength ของ textarea
+			var length=$("#txt1").val().length;	// เก็บจำนวนตัวอักษรที่พิมพ์ลงไปใน #txt1
+			var textleft=textmax-length;
+			$("#div1").html("จำนวนตัวอักษรที่พิมพ์ได้ : <strong>" + textleft + "</strong>"); 	// แสดงผล length ลงไปแทนค่าใน #div1
+		}
+	});
+	</script>
+</html>
+

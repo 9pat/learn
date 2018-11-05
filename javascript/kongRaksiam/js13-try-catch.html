@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : Try..Catch  </title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+
+	<p id="p1">ข้อความ</p>
+	<button onclick="addData()">เพิ่มข้อมูล</button>
+	<hr>
+	</body>
+	
+	<script>
+	// การดจัดการความผิดปรกติใน Javascript ด้วย try..catch+throws สิ่งผิดปรกติออกไป
+	function addData(){
+		var x=parseInt(prompt("ป้อนเลข 0-10 : "));
+		try{
+			if(x>10){
+				throw "err1"; 
+			} else if(x<0) {
+				throw "err2"; 
+			} else if(isNaN(x)){	// ดักจับ String Value
+				throw "err3"; 
+			}			
+		}catch(err){
+			var msg=document.getElementById("p1");
+			if(err=="err1"){
+				msg.innerHTML="กรุณาใส่ค่าไม่เกิน 10";
+			}
+			if(err=="err2"){
+				msg.innerHTML="กรุณาใส่ค่ามากกว่า 0";
+			}
+			if(err=="err2"){
+				msg.innerHTML="กรุณาใส่ค่าเป็นตัวเลข";
+			}
+		}
+	}
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

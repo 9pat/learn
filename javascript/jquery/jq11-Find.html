@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : Find</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+		.style1 {font-style:italic; background: pink;}
+		.shadow {text-shadow: 1px 1px;}
+		</style>
+	</head>
+	
+	<body>
+	<p>
+		<strong>เอกสารประกอบการรับสมัคร</strong> <br>
+		1. ใบสมัครพร้อมกรอข้อมูลให้ครบถ้วน<br>
+		2. สำเนาบัตรประจำตัวประชาชน หรือ สำเนาบัตรประจำตัวอื่นๆที่ราชการเป็นผู้ออกให้ พร้อมเซ็นต์รับรองสำเนาถูกต้อง<br>
+		3. รูปถ่ายหน้าตรง <b> ขนาด 2 นิ้ว </b> จำนวน 1 ใบสมัครพร้อมกรอข้อมูลให้ครบถ้วน<br>
+		<br>
+		<strong>คุณสมบัติของผู้สมัคร</strong><br>
+		1. ต้องมีอายุตั้งแต่ 15 ปีขึ้นไป <br>
+	</p>
+	</body>
+	
+	<script>
+	$(function(){
+		$("p").find("strong").addClass("style1");
+		$("p").find("b").addClass("shadow");
+		$("html").find("body").css("background-color","lightgreen");
+	});
+	</script>
+</html>
+

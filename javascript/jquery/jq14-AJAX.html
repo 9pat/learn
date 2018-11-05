@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : AJAX in jQuery</title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+
+		</style>
+	</head>
+	
+	<body>
+	<p>โหลดหน้าจอ (ข้อมูล) ขึ้นมาโดยไม่ต้อง refresh </p>
+	<a href="#" id="menu_php">php</a> | 
+	<a href="#" id="menu_sql">sql</a> | 
+	<a href="#" id="menu_html">html</a> | 
+	<a href="#" id="menu_css">css</a> 
+	<hr>
+	<div id="div1"></div>
+	
+	</body>
+	
+	<script>
+	$(function(){
+		$("#menu_php").click(function(){
+			//$("#div1").html("learning some PHP");
+			$("#div1").load("phppage.php");
+			
+		});
+		$("#menu_sql").click(function(){
+			//$("#div1").html("learning some sql");
+			$("#div1").load("htmlpage.html");
+		});
+		$("#menu_html").click(function(){
+			$("#div1").html("learning some html");
+		});
+		$("#menu_css").click(function(){
+			//$("#div1").html("learning some css");
+			$("#div1").load("csspage.css");
+		});
+	});
+	</script>
+</html>
+

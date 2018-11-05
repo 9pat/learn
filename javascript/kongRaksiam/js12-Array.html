@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS : Array </title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+
+	<p id="p1">แสดงผล</p>
+	<button onclick="addData()">เพิ่มข้อมูลด้วย array push()</button>
+	<button onclick="removeData()">ลบข้อมูลด้วย array pop()</button>
+	<button onclick="sorting()">เรียงข้อมูลด้วย array sort()</button>
+	<hr>
+	</body>
+	<script>
+	// สร้าง array แบบที่ 1
+	var color=["red","green","blue","pink","grey"];
+	
+	// สร้าง array แบบที่ 2
+	var code=new Array();
+		code[0]="html";
+		code[1]="css";
+		code[2]="php";
+		code[3]="javascript";
+		code[4]="node";
+	
+		// ใช้ .length ในการแทนค่าจำนวนสมาชิก array เพื่อเพิ่มค่าใหม่ต่อท้ายไปได้เรื่อยๆ 
+		code[code.length]="python" 
+		code[code.length]="R" 
+		
+	// document.getElementById("p1").innerHTML=code;
+	
+	// การใช้ .length ของ array ในการวน loop 
+	for(var i=0 ; i<code.length ; i++){
+		var n = i + 1 ;
+		document.write(" ("+n+") " +code[i] );
+	}
+	
+	// การนำข้อมูลเข้าไปใน Array ในรูปแบบ Stack ด้วย .push() 
+	var arr=new Array();
+	function addData(){
+		var name=prompt("ป้อนข้อมูล : ");
+		arr.push(name); 	// .push() ---- ลองเปลี่ยนเป็น .unshift()
+		showArray();
+	}
+	// การนำข้อมูลออกจาก Array ด้วย .pop() ** โดยไล่จากตัวล่าสุดที่ตำแหน่ง arr.length ก่อน
+	function removeData(){
+		var con=confirm("ลบข้อมูล?");
+		if(con){
+			arr.pop();		// .pop() ---- ลองเปลี่ยนเป็น .shift()
+			showArray();
+		}
+	}
+	// การเรียงลำดับข้อมูลใน Array
+	function sorting(){
+		arr.sort();
+		showArray();
+	}
+
+	function showArray(){
+	var txt ="";
+	for(var i=0 ; i<arr.length ; i++){
+		var n = i + 1 ;
+		txt+=" (" + n + ") " + arr[i];
+		document.getElementById("p1").innerHTML=txt;
+	}
+}
+	
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

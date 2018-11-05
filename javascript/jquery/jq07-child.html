@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : find by Child | Name Class </title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+		#div1{width:200px; height:100px;background-color:pink; border: 2px solid lightgrey;}
+		#div2{width:220px; height:140px;background-color:green; border: 2px solid pink;}
+		.style1{width:300px; height:120px;background-color:grey; border: 2px solid red;}
+		</style>
+	</head>
+	
+	<body>
+
+	<div id="div1"> <!-- div = parent node -->
+		<a href="#">HTML</a> <!-- a = child node -->
+		<a href="#">CSS</a>
+		<a href="#">JS</a>
+	</div>
+	<hr>
+	<table border=1" id="table1">
+		<tr><td>name</td><td>last</td></tr>
+		<tr><td>patt</td><td>p2p</td></tr>
+		<tr><td>trix</td><td>mee</td></tr>
+		<tr><td>art</td><td>nai</td></tr>
+	<table>
+	<hr>
+	<input type="text" name="txt1" /> 
+	<input type="text" name="txt2" /> 
+	<input type="text" name="txt3" /> 
+	<br>
+	<div class="div1"></div>
+
+	</body>
+	<script>
+	$(function(){
+		$("#div1>a").css("background-color","green");		// ระบุ 'a' ที่เป็น child ของ element ที่มี id คือ #div1 
+		$("#div1>a:first").css("color","yellow");		// ระบุ 'a' !! ตัวแรก (first) ที่เป็น child ของ element ที่มี id คือ #div1 
+		$("#div1>a:last").css("color","yellow");		// ระบุ 'a' !! ตัวสุดท้าย (last) ที่เป็น child ของ element ที่มี id คือ #div1 
+		// 
+		$("table tr:first").css("background-color","lightgreen");
+		$("#table1 tr:last").css("background-color","lightyellow");
+		//
+		// ค้นหาแบบ name 
+		$("input[name=txt1]").val("text one");
+		// ค้นหาแบบ class
+		$(".div1").addClass("style1");
+	});
+	</script>
+</html>
+

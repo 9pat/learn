@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> JS :  confirm dialog</title>
+		<link rel="stylesheet" href="">
+	</head>
+	
+	<body>
+		<form name="form1">
+			ชื่อ : <input type="text" name="txt1" value=""></input><br>
+			สกุล : <input type="text" name="txt2" value=""></input><br>
+			<button onclick="alert(writeName())">คลิ๊กที่นี่ </button>
+		</form>
+		
+		<p> = = = = = = = = = = = = = = = = = </p>
+	</body>
+	<script>
+	function writeName(){
+		// ฟังก์ชั่น confirm() return ค่าเป็น boolean
+		var str=confirm("บันทึกข้อมูล?");	// เอาค่า return true / false ไปเป็นไว้ใน str
+		var fname=document.form1.txt1.value;
+		var lname=document.form1.txt2.value;
+		if(str){
+			alert('บันทึกชื่อ ' + fname + ' ' + lname + ' เรียบร้อย');
+			document.write(fname + ' ' + lname);
+		} else {
+			document.write('ไม่บันทึก');
+		}
+	}
+		
+	</script>
+	<script type="text/javascript" src=""></script>
+</html>

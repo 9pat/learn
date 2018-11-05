@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> jquery : addClass removeClass toggleClass </title>
+		<script type="text/javascript" src="./jquery-2.2.4.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+			.style1{font-size:20px; color:purple;}
+			.style2{font-size:22px; color:green;font-style:italic;}
+			.php{box-shadow: 2px 2px lightgrey; width: 100px; height 55px;border: 2px dotted black;}
+		</style>
+	</head>
+	
+	<body>
+
+	<p id="p1">paragraph</p>
+	<div><br><br><br><br></div>
+
+	<button id="add">เพิ่ม style</button>
+	<button id="del">ลบ style</button>
+	<button id="toggle">สลับ style</button>
+	
+	</body>
+	<script>
+	$(function(){
+		// เปลี่ยน style โดยใช้ addClass
+		$("#add").click(function(){
+			$("#p1").addClass("style1");
+			$("div").addClass("php");
+		});	
+		
+		$("#del").click(function(){
+			$("#p1").removeClass("style1");
+		});
+		
+		$("#toggle").click(function(){
+			$("#p1").toggleClass("style1","style1");	// toggle คือ addClass กับ removeClass ใน function เดียว 
+		});
+	});
+	</script>
+</html>
