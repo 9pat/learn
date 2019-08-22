@@ -378,24 +378,3 @@ git pull remote-name branch-name
 The git pull receives all your remote changes (commits) from the remote named remote-name and on branch branch-name.
 
 -----------------------------------------------------------------
-
-
-
-
------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
