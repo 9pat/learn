@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <style>
+	.my-flex-container{
+		border: 2px solid green;
+		height: 100px;
+		margin-bottom: 20px;
+	}
+	.my-flex-container-column{
+		border: 2px solid green;
+		height: 200px;
+		margin-bottom: 20px; 
+	}
+	.my-flex-item{
+		background-color: lightgrey;
+		border: 1px dotted grey;
+		height: 48px;
+	}
+	.my-flex-item-2{
+		background-color: lightgrey;
+		border: 1px dotted grey;
+		height: 96px;
+	}
+  </style>
+</head>
+<body> 
+
+	<div class="container">
+	
+		flex-row
+		<div class="d-flex flex-row my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		flex-row-reverse
+		<div class="d-flex flex-row-reverse my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		 justify-content-??? : start, end, center ,around, between
+		<div class="d-flex flex-row justify-content-between my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		flex-column
+		<div class="d-flex flex-column my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		flex-column-reverse
+		<div class="d-flex flex-column-reverse my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		flex-column justify-content-???
+		<div class="d-flex flex-column justify-content-between my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		 align-items-??? : start, end, center ,baseline, stretch
+		<div class="d-flex flex-row align-items-end my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		align-self-??? : start, end, center, baseline, stretch
+		<div class="d-flex flex-row my-flex-container">
+			<div class="p-2 my-flex-item-2"> 1 </div>
+			<div class="p-2 align-self-start my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item-2"> 3 </div>
+		</div>
+		
+		
+		flex-wrap flex-rwap-reverse flex-nowrap
+		<div class="d-flex flex-row flex-wrap my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+			<div class="p-2 my-flex-item"> 4 </div>
+			<div class="p-2 my-flex-item"> 5 </div>
+			<div class="p-2 my-flex-item"> 6 </div>
+			<div class="p-2 my-flex-item"> 7 </div>
+			<div class="p-2 my-flex-item"> 8 </div>
+			<div class="p-2 my-flex-item"> 9 </div>
+			<div class="p-2 my-flex-item"> 10 </div>
+			<div class="p-2 my-flex-item"> 11 </div>
+			<div class="p-2 my-flex-item"> 12 </div>
+			<div class="p-2 my-flex-item"> 13 </div>
+			<div class="p-2 my-flex-item"> 14 </div>
+			<div class="p-2 my-flex-item"> 15 </div>
+			<div class="p-2 my-flex-item"> 16 </div>
+			<div class="p-2 my-flex-item"> 17 </div>
+			<div class="p-2 my-flex-item"> 18 </div>
+			<div class="p-2 my-flex-item"> 19 </div>
+			<div class="p-2 my-flex-item"> 20 </div>
+		</div>
+		
+		order-??
+		<div class="d-flex flex-row flex-wrap my-flex-container">
+			<div class="p-2 order-3 my-flex-item"> 1 </div>
+			<div class="p-2 order-1 my-flex-item"> 2 </div>
+			<div class="p-2 order-2 my-flex-item"> 3 </div>
+		</div>
+		
+		mr-auto, ml-auto
+		<div class="d-flex flex-row flex-wrap my-flex-container">
+			<div class="p-2 ml-auto my-flex-item"> 1 </div>
+			<div class="p-2 mr-auto my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+		align-self-??-start : -sd, -md, -lg [responsive]
+		<div class="d-flex flex-row flex-wrap my-flex-container">
+			<div class="p-2 my-flex-item"> 1 </div>
+			<div class="p-2 align-self-sd-start align-self-md-center align-self-lg-end my-flex-item"> 2 </div>
+			<div class="p-2 my-flex-item"> 3 </div>
+		</div>
+		
+	</div>
+
+
+
+</body>
+</html>
